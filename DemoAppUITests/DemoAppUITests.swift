@@ -30,6 +30,14 @@ final class DemoAppUITests: XCTestCase {
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
+    @MainActor
+    func testExample1() throws {
+        let app = XCUIApplication()
+        app.activate()
+        app/*@START_MENU_TOKEN@*/.buttons["Show all posts"]/*[[".otherElements.buttons[\"Show all posts\"]",".buttons[\"Show all posts\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.firstMatch.tap()
+        XCUIDevice.shared.press(.home)
+        
+    }
 
     @MainActor
     func testLaunchPerformance() throws {
